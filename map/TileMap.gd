@@ -14,7 +14,8 @@ func _ready():
 	moisture.seed = randi()
 	temperature.seed = randi()
 	altitude.seed = randi()
-	altitude.frequency = 0.005
+	#altitude.frequency = 0.005
+	
 	
 
 
@@ -35,6 +36,11 @@ func generate(position):
 			var alt = altitude.get_noise_2d(tilePosition.x - width/2 + x, tilePosition.y - height/2 + y) * 10
 			
 			if alt < 2:
-				set_cell(0, Vector2i(tilePosition.x - width/2 + x, tilePosition.y - height/2 + y), 0, Vector2(3, round((temp + 10) / 5)))
+				set_cell(0, Vector2i(tilePosition.x - width/2 + x, tilePosition.y - height/2 + y), 1, Vector2(4, round((temp + 10) / 5)))
+			#elif alt == 2:
+				#set_cell(0, Vector2i(tilePosition.x - width/2 + x, tilePosition.y - height/2 + y), 1, Vector2(1, 2))
+			elif alt > 4:
+				set_cell(0, Vector2i(tilePosition.x - width/2 + x, tilePosition.y - height/2 + y), 1, Vector2(0, round((temp + 10) / 5)))
 			else:
-				set_cell(0, Vector2i(tilePosition.x - width/2 + x, tilePosition.y - height/2 + y), 0, Vector2(round((moist + 10) / 5), round((temp + 10) / 5)))
+				set_cell(0, Vector2i(tilePosition.x - width/2 + x, tilePosition.y - height/2 + y), 1, Vector2(round((moist + 10) / 5), round((temp + 10) / 5)))
+

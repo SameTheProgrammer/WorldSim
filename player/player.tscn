@@ -150,7 +150,8 @@ shape = SubResource("CapsuleShape2D_iga8o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q54uw")
-animation = &"walkDown"
-frame_progress = 0.330936
+animation = &"walkUp"
+frame = 2
+frame_progress = 0.726688
 
 [node name="Camera2D" type="Camera2D" parent="."]
